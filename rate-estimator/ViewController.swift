@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var totalTimeLabel: UILabel!
     
     @IBOutlet weak var entryTimePicker: UIDatePicker!
+    @IBOutlet weak var exitTimePicker: UIDatePicker!
     
     var entryTime: Date = Date.now
     var exitTime: Date?
@@ -68,11 +69,23 @@ class ViewController: UIViewController {
     }
     //Acciones
     @IBAction func calculate(_ sender: UIButton) {
-        amountToPay.text = "$ \(String(calculateCost(totalTime: totalTime(checkIn: entryTime, checkOut: exitTime!), costPerMinute: 15)))"
+        if exitTime != nil {
+            amountToPay.text = "$ \(String(calculateCost(totalTime: totalTime(checkIn: entryTime, checkOut: exitTime!), costPerMinute: 15)))"}
     }
     
     @IBAction func deleteSelection(_ sender: Any) {
-        print("clear view")
+        totalTimeLabel.text = "-"
+        amountToPay.text = "$0"
+        entryTimeLabel.text = "--"
+        exitTimeLabel.text = "--"
+        
+        entryTime = Date.now
+        exitTime = nil
+        
+        entryTimePicker.date = Date.now
+        exitTimePicker.date = Date.now
+        
+        print("view cleared")
     }
     
     //Funciones

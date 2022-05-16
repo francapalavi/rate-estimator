@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LR3-CK-K2X">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y0I-oQ-ozu">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="37"/>
@@ -50,7 +50,7 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="58" translatesAutoresizingMaskIntoConstraints="NO" id="GXw-Yh-eJ4">
-                                        <rect key="frame" x="0.0" y="45" width="414" height="773"/>
+                                        <rect key="frame" x="0.0" y="45" width="414" height="807"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iGc-JR-YEN">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="142"/>
@@ -94,10 +94,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nwy-As-nzC">
-                                                <rect key="frame" x="0.0" y="200" width="414" height="573"/>
+                                                <rect key="frame" x="0.0" y="200" width="414" height="607"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="58" translatesAutoresizingMaskIntoConstraints="NO" id="dWA-bh-cZf">
-                                                        <rect key="frame" x="16" y="16" width="382" height="557"/>
+                                                        <rect key="frame" x="16" y="16" width="382" height="591"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="AKE-AE-oOS">
                                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="93"/>
@@ -255,10 +255,10 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l5R-AR-gKd">
-                                                                <rect key="frame" x="0.0" y="376" width="382" height="19"/>
+                                                                <rect key="frame" x="0.0" y="376" width="382" height="21"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="XlE-m0-hH6">
-                                                                        <rect key="frame" x="150" y="1" width="82" height="17"/>
+                                                                        <rect key="frame" x="150" y="2" width="82" height="17"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABO-fB-mAh">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="38" height="17"/>
@@ -281,7 +281,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="1zA-gp-XS5">
-                                                                <rect key="frame" x="0.0" y="453" width="382" height="104"/>
+                                                                <rect key="frame" x="0.0" y="455" width="382" height="136"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="61K-kF-4Ao">
                                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="44"/>
@@ -310,6 +310,13 @@
                                                                             <action selector="deleteSelection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xj7-fR-6Lt"/>
                                                                         </connections>
                                                                     </button>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2xt-cU-AZh">
+                                                                        <rect key="frame" x="0.0" y="120" width="382" height="16"/>
+                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="16" id="BiF-Sn-cRX"/>
+                                                                        </constraints>
+                                                                    </view>
                                                                 </subviews>
                                                             </stackView>
                                                         </subviews>
@@ -335,7 +342,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LR3-CK-K2X" secondAttribute="trailing" id="DEM-QC-Cit"/>
                             <constraint firstItem="LR3-CK-K2X" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Yoy-C6-cE5"/>
                             <constraint firstItem="LR3-CK-K2X" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="buk-jC-F6v"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LR3-CK-K2X" secondAttribute="bottom" id="hSU-db-BF2"/>
+                            <constraint firstAttribute="bottom" secondItem="LR3-CK-K2X" secondAttribute="bottom" id="hSU-db-BF2"/>
                         </constraints>
                     </view>
                     <connections>
@@ -343,6 +350,7 @@
                         <outlet property="entryTimeLabel" destination="2Jl-ab-vht" id="UMT-0B-RNY"/>
                         <outlet property="entryTimePicker" destination="dbH-EE-e90" id="Gph-Wq-WZC"/>
                         <outlet property="exitTimeLabel" destination="wLe-mU-B9Q" id="juI-Hx-6FS"/>
+                        <outlet property="exitTimePicker" destination="qKd-m4-Hg3" id="VeS-DB-CkE"/>
                         <outlet property="totalTimeLabel" destination="MaK-SL-N2a" id="Mzg-uC-Tf3"/>
                     </connections>
                 </viewController>
