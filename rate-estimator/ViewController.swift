@@ -9,24 +9,20 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    // Texto precio a pagar
     @IBOutlet weak var amountToPay: UILabel!
-    
-    // Texto hora de entrada y salida
     @IBOutlet weak var entryTimeLabel: UILabel!
     @IBOutlet weak var exitTimeLabel: UILabel!
-    
-    // Total Time
     @IBOutlet weak var totalTimeLabel: UILabel!
     
     @IBOutlet weak var entryTimePicker: UIDatePicker!
     
-    var entryTime: Date? = Date.now
+    var entryTime: Date = Date.now
     var exitTime: Date?
 
 
     override func viewDidLoad() {
         amountToPay.text = "$0"
+        // Sería genial usar entryTimePicker.date, formateado como HH:MM
         entryTimeLabel.text = "--"
         exitTimeLabel.text = "--"
         totalTimeLabel.text = "-"
@@ -37,7 +33,7 @@ class ViewController: UIViewController {
     
     // Selección horas CheckIn y CheckOut
     @IBAction func entryTimePicker(_ sender: UIDatePicker) {
-        if let picker = sender as? UIDatePicker {
+        let picker: UIDatePicker = sender
             let calendar = Calendar.current
             let hour = calendar.component(.hour, from: picker.date)
             let minute = calendar.component(.minute, from: picker.date)
@@ -47,15 +43,14 @@ class ViewController: UIViewController {
             entryTimeLabel.text = "\(hour) : \(minute)"
             entryTime = sender.date
             print("entryTime changed to \(String(describing: entryTime))")
-        }
         
-        if entryTime != nil && exitTime != nil {
-            totalTimeLabel.text = "\(String(totalTime(checkIn: self.entryTime!, checkOut: self.exitTime!))) minutos"
+        if exitTime != nil {
+            totalTimeLabel.text = "\(String(totalTime(checkIn: self.entryTime, checkOut: self.exitTime!))) minutos"
         }
     }
     
     @IBAction func exitTimePicker(_ sender: UIDatePicker) {
-        if let picker = sender as? UIDatePicker {
+        let picker: UIDatePicker = sender
             let calendar = Calendar.current
             let hour = calendar.component(.hour, from: picker.date)
             let minute = calendar.component(.minute, from: picker.date)
@@ -65,15 +60,15 @@ class ViewController: UIViewController {
             exitTimeLabel.text = "\(hour) : \(minute)"
             exitTime = sender.date
             print("exitTime changed to \(String(describing: exitTime))")
-        }
         
-        if entryTime != nil && exitTime != nil {
-            totalTimeLabel.text = "\(String(totalTime(checkIn: self.entryTime!, checkOut: self.exitTime!))) minutos"
+        
+        if exitTime != nil {
+            totalTimeLabel.text = "\(String(totalTime(checkIn: self.entryTime, checkOut: self.exitTime!))) minutos"
         }
     }
     //Acciones
     @IBAction func calculate(_ sender: UIButton) {
-        amountToPay.text = "$ \(String(calculateCost(totalTime: totalTime(checkIn: entryTime!, checkOut: exitTime!), costPerMinute: 1)))"
+        amountToPay.text = "$ \(String(calculateCost(totalTime: totalTime(checkIn: entryTime, checkOut: exitTime!), costPerMinute: 15)))"
     }
     
     @IBAction func deleteSelection(_ sender: Any) {
@@ -82,7 +77,7 @@ class ViewController: UIViewController {
     
     //Funciones
     func totalTime(checkIn: Date, checkOut: Date) -> Int {
-        var totalTime: Int = Int(checkOut.timeIntervalSinceReferenceDate - checkIn.timeIntervalSinceReferenceDate) / 60
+        let totalTime: Int = Int(checkOut.timeIntervalSinceReferenceDate - checkIn.timeIntervalSinceReferenceDate) / 60
             print("\(totalTime) minutos")
         
             return totalTime
